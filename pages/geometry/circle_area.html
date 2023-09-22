@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Math Helpers | Geometry</title>
+        <script src="../../js/global.js"></script>
+        <script src="../../js/circle_area.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../styles.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
+    <body>
+        <div id="topmenu">
+            <a href="../../index.html">Home</a>
+            <a href="../algebra.html">Algebra</a>
+            <a class="active" href="../geometry.html">Geometry</a>
+            <a href="../help.html">Help</a>
+            <a href="../about.html">About</a>
+            <a href="javascript:void(0);" class="menuicon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="content_regular">
+            <div>
+                <h1>Find the area of a circle</h1>
+                <p>To find the area of a circle enter its radius.</p>
+                <form id="circleAreaForm">
+                    <p>Enter radius of your circle:
+                    <input name="radius" type="number" min="0" value="1"></p>
+                    <input type="submit" value="Find area">
+                </form>
+                <div id="result_box">
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <p>&copy; 2023 Math Helper</p>
+        </footer>
+
+        <script>
+            document.getElementById("circleAreaForm").addEventListener("submit", (e) => { 
+                e.preventDefault(); 
+                computeArea();
+            });
+        </script>
+    </body>
+</html>

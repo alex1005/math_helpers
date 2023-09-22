@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Math Helpers | Geometry</title>
+        <script src="../../js/global.js"></script>
+        <script src="../../js/triangle_area.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../styles.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
+    <body>
+        <div id="topmenu">
+            <a href="../../index.html">Home</a>
+            <a href="../algebra.html">Algebra</a>
+            <a class="active" href="../geometry.html">Geometry</a>
+            <a href="../help.html">Help</a>
+            <a href="../about.html">About</a>
+            <a href="javascript:void(0);" class="menuicon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="content_regular">
+            <div>
+                <h1>Find the area of a triangle</h1>
+                <p>To find the area of a triangle select dimension and enter coordinates of the triangle's vertices.</p>
+                <form id="triangleAreaForm">
+                    <p>Select dimension:
+                    <select name="dim" onchange="onDimChange()">
+                        <option value="2" selected>2D</option>
+                        <option value="3">3D</option>
+                    </select> </p>
+                    <p id="vert1"> First vertex: 
+                        <input name="c11" type="number" value="0">
+                        <input name="c12" type="number" value="0">
+                    </p>
+                    <p id="vert2"> Second vertex: 
+                        <input name="c21" type="number" value="0">
+                        <input name="c22" type="number" value="0">
+                    </p>
+                    <p id="vert3"> Third vertex: 
+                        <input name="c31" type="number" value="0">
+                        <input name="c32" type="number" value="0">
+                    </p>
+                    <input type="submit" value="Find area">
+                </form>
+                <div id="result_box">
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <p>&copy; 2023 Math Helper</p>
+        </footer>
+
+        <script>
+            document.getElementById("triangleAreaForm").addEventListener("submit", (e) => { 
+                e.preventDefault(); 
+                computeArea();
+            });
+        </script>
+    </body>
+</html>
